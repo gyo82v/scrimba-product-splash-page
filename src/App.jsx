@@ -6,19 +6,24 @@ function App() {
   const [formData, setFormdata] = useState({name : "", email : ""})
 
   //tailwind styles 
-  const container = `flex flex-col`
+  const container = `flex flex-col md:flex-row`
   const header = `flex flex-col bg-cover bg-center items-center justify-center
-                  p-4 font-bold text-center`
+                  p-4 font-bold text-center min-h-80 md:flex-1 md:min-h-screen`
   const title = `text-4xl text-neutral-300`
   const headerDesc = `text-neutral-300 mt-4`
-  const main = `flex flex-col items-center p-4 mt-10 text-center`
+  const main = `flex flex-col items-center p-4 mt-10 md:mt-0 text-center md:flex-1 md:justify-center
+                md:px-10 lg:px-20`
   const img = `rounded-full h-40 w-40`
   const subTitle = `text-2xl font-bold mt-4`
-  const span = `font-semibold text-lg italic`
-  const mainDesc = `mt-4`
-  const form = ``
-  const formDesc = ``
-  const input = ``
+  const span = `font-semibold text-lg italic my-4`
+  const mainDesc = `mt-4 `
+  const form = `flex flex-col w-full mt-4`
+  const formDesc = `mt-4 italic font-light`
+  const input = `border boder-neutral-400 rounded-lg p-2 mt-2 shadow-lg shadow-neutral-800/30
+                 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:bg-neutral-200
+                 focus:text-lg focus:font-bold font-semibold `
+  const btn = `mt-8 py-2 bg-gradient-to-br from-green-400 to-lime-300 rounded-lg border-none
+               transform hover:scale-105 active:scale-95 font-bold text-lg text-green-900`
 
   //
   const onChange = e => {
@@ -69,7 +74,7 @@ function App() {
             onChange={onChange}
             className={input}
           />
-          <button>Apply</button>
+          <button className={btn}>Apply</button>
         </form>
         <p className={formDesc}>We'll never share your information without permission</p>
       </main>
